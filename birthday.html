@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Devi ji ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#000;
+overflow:hidden;
+overflow-y:auto;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:1s;
+}
+
+.light-on{
+background:linear-gradient(135deg,#fff5f7,#fff,#f5f7ff);
+}
+
+.container{
+width:90%;
+max-width:700px;
+text-align:center;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+box-shadow:0 10px 40px rgba(0,0,0,.2);
+position:relative;
+z-index:100;
+}
+
+.page{
+display:none;
+animation:fade .8s ease;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+font-size:2.2rem;
+color:#757272;
+margin-bottom:15px;
+}
+
+p{
+color:#444;
+line-height:1.8;
+font-size:1.1rem;
+margin-bottom:20px;
+}
+
+.sparkle{
+font-size:45px;
+color:gold;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.2);
+}
+}
+
+.btn{
+padding:14px 35px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:1rem;
+font-weight:600;
+margin:10px;
+transition:.3s;
+color:white;
+}
+
+.yes{
+background:linear-gradient(45deg,#ff4081,#ff6b6b);
+}
+
+.no{
+background:linear-gradient(45deg,#7b61ff,#9f67ff);
+position:relative;
+}
+
+.action{
+background:linear-gradient(45deg,#ff006e,#ff4d6d);
+width:100%;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+.banner{
+margin:20px auto;
+background:linear-gradient(45deg,#ff006e,#ff8a00);
+padding:15px;
+border-radius:50px;
+color:white;
+font-weight:bold;
+letter-spacing:2px;
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 10px #ff006e;
+}
+to{
+box-shadow:0 0 30px #ff8a00;
+}
+}
+
+.cake{
+font-size:120px;
+animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+to{
+transform:translateY(-15px);
+}
+}
+
+.message{
+text-align:left;
+background:white;
+padding:25px;
+border-radius:15px;
+color:#444;
+margin-top:20px;
+max-height:300px;
+overflow:auto;
+}
+
+.hearts{
+position:absolute;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+.balloon{
+position:absolute;
+bottom:-120px;
+width:70px;
+height:90px;
+border-radius:50%;
+animation:fly 12s linear infinite;
+}
+
+.balloon::after{
+content:'';
+position:absolute;
+width:2px;
+height:80px;
+background:#999;
+left:50%;
+top:90px;
+}
+
+@keyframes fly{
+to{
+transform:translateY(-120vh);
+}
+}
+
+.typing{
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid #ff4081;
+width:0;
+animation:typing 4s steps(40,end) forwards;
+}
+
+@keyframes typing{
+to{
+width:100%;
+}
+}
+
+.firework{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+animation:explode 1s linear forwards;
+}
+
+@keyframes explode{
+to{
+transform:translate(var(--x),var(--y));
+opacity:0;
+}
+}
+
+.hidden{
+display:none;
+}
+
+@media(max-width:600px){
+
+.container{
+padding:15px;
+width:95%;
+}
+
+h1{
+font-size:1.5rem;
+line-height:1.4;
+}
+
+p{
+font-size:0.95rem;
+line-height:1.6;
+}
+
+.btn{
+width:100%;
+margin:8px 0;
+padding:14px;
+}
+
+.cake{
+font-size:80px;
+}
+
+.message{
+max-height:45vh;
+padding:15px;
+font-size:14px;
+}
+
+.typing{
+white-space:normal;
+width:100%;
+border-right:none;
+animation:none;
+}
+}
+.message::-webkit-scrollbar{
+width:6px;
+}
+
+.message::-webkit-scrollbar-thumb{
+background:#ff4081;
+border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<div class="sparkle">✨</div>
+
+<h1>It's Your Special Day Devi ji❤️</h1>
+
+<button class="btn action" onclick="nextPage(2)">
+Continue
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="sparkle">✨</div>
+
+<p>
+I wanted to make something special for you because
+you are one of the most important people in my life ❤️
+</p>
+
+<button class="btn action" onclick="nextPage(3)">
+Next
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h1>Do you want to see what I prepared? 😊</h1>
+
+<button class="btn yes" onclick="nextPage(4)">
+Yes 💖
+</button>
+
+<button class="btn no" id="noBtn">
+No 😄
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h1>💡 Lights On</h1>
+
+<button class="btn action" onclick="lightsOn()">
+Turn On Lights
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<h1>🎀 Decorate</h1>
+
+<button class="btn action" onclick="decorate()">
+Decorate
+</button>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="page6">
+
+<h1>🎈 Fly Balloons</h1>
+
+<button class="btn action" onclick="flyBalloons()">
+Fly Balloons
+</button>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page" id="page7">
+
+<div class="banner">
+HAPPY BIRTHDAY Devi ji 🎉
+</div>
+
+<div class="cake">🎂</div>
+
+<button class="btn action" onclick="showMessage()">
+I Have A Message For You ❤️
+</button>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page" id="page8">
+
+<h1 class="typing">
+Dear Devi ji❤️
+</h1>
+
+<div class="message">
+
+<p>
+Happy Birthday to the most amazing, irritating, lovable, and unforgettable girl best friend! 🎉❤️
+
+I seriously don't know how someone can be so special and so hopeless at the same time. You are the kind of person who puts zero effort into remembering important things, forgets half the conversations we have, loses things every other day, and somehow manages to be clumsy enough to trip over absolutely nothing. 😂 Yet, despite all that, you have become one of the most important people in my life. You are proof that perfection isn't what makes someone beautiful—it's their crazy habits, silly mistakes, and genuine heart that make them irreplaceable.
+
+Thank you for being the person who listens to my random stories, tolerates my mood swings, supports me when things get difficult, and fills ordinary days with laughter. Even though you act like a professional "bhulakkad" and need reminders for everything, you never fail to leave memories that stay forever. Your kindness, your smile, your weird sense of humor, and even your chaotic energy make every moment around you more fun and meaningful.
+
+Honestly, I still wonder how a person can be this caring while simultaneously forgetting where they kept their phone five minutes ago. 🤦‍♂️ But that's what makes you you. You don't need to change anything because your imperfections are exactly what make you special. The world sees a sweet girl, but I see the complete package—a best friend who is loving, supportive, funny, dramatic, clumsy, forgetful, and absolutely one of a kind.
+
+On your birthday, I want you to know that you deserve all the happiness, success, love, and laughter this world has to offer. May your life be filled with beautiful moments, exciting adventures, and dreams that come true. And while you're busy forgetting things as usual, never forget this: you are deeply valued, genuinely appreciated, and loved by the people lucky enough to have you in their lives.
+
+So here's to another year of your chaos, your "I forgot" moments, your accidental adventures, and the countless memories we'll create together. Stay the same wonderful, crazy, lovable, zero-effort, bhulne wali, clumsy best friend that you are. Life would be a lot less fun without you.
+
+Happy Birthday, bestie! 🎂🎈❤️✨
+May your day be as beautiful as your heart, as bright as your smile, and hopefully a little less clumsy than usual! 😂💕
+
+
+
+<br>❤️ Happy Birthday Devi ji ❤️<br>
+
+Your purest Enemhy,<br>
+<b></b>
+
+<br><br>
+
+
+
+</p>
+
+</div>
+
+<button class="btn action" onclick="finale()">
+Final Surprise 🎆
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const noBtn=document.getElementById('noBtn');
+
+noBtn.addEventListener('mouseover',()=>{
+
+const x=Math.random()*300-150;
+const y=Math.random()*200-100;
+
+noBtn.style.transform=`translate(${x}px,${y}px)`;
+
+});
+
+function nextPage(id){
+
+document.querySelectorAll('.page')
+.forEach(p=>p.classList.remove('active'));
+
+document.getElementById('page'+id)
+.classList.add('active');
+
+}
+
+function lightsOn(){
+
+document.body.classList.add('light-on');
+
+nextPage(5);
+
+}
+
+function decorate(){
+
+const banner=document.createElement('div');
+
+banner.className='banner';
+
+banner.innerHTML='🎉 HAPPY BIRTHDAY DIDI 🎉';
+
+document.body.appendChild(banner);
+
+setTimeout(()=>{
+
+banner.remove();
+
+nextPage(6);
+
+},2000);
+
+}
+
+function flyBalloons(){
+
+for(let i=0;i<20;i++){
+
+let b=document.createElement('div');
+
+b.className='balloon';
+
+b.style.left=Math.random()*100+'vw';
+
+b.style.background=
+`hsl(${Math.random()*360},80%,60%)`;
+
+b.style.animationDuration=
+(8+Math.random()*5)+'s';
+
+document.body.appendChild(b);
+
+}
+
+nextPage(7);
+
+}
+
+function showMessage(){
+
+nextPage(8);
+
+createHearts();
+
+}
+
+function createHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement('div');
+
+heart.className='hearts';
+
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},400);
+
+}
+
+function finale(){
+
+for(let i=0;i<250;i++){
+
+let f=document.createElement('div');
+
+f.className='firework';
+
+f.style.left='50%';
+f.style.top='50%';
+
+f.style.background=
+`hsl(${Math.random()*360},100%,50%)`;
+
+f.style.setProperty('--x',
+(Math.random()*800-400)+'px');
+
+f.style.setProperty('--y',
+(Math.random()*800-400)+'px');
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),1000);
+
+}
+
+alert("🎉 HAPPY BIRTHDAY Devi ji ❤️ 🎂");
+}
+
+</script>
+<audio id="birthdayMusic" loop>
+    <source src="happy_birthday.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
